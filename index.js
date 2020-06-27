@@ -1,12 +1,32 @@
 document.addEventListener('DOMContentLoaded', () => {
     Highcharts.chart('container', {
         chart: {
-            type: 'line'
+            type: 'line',
             // bar, area, scatter, line ,column, arealine
+            zoomType: 'xy'
+            // y, x, xy
         },
+
         title: {
             text: 'JavaScript Developers'
         },
+
+        tooltip: {
+            animation: true, // default - true  
+            backgroundColor: 'black',
+            borderRadius: 20,
+            // followRadius: true,
+            style: {
+                color: 'white'
+            },
+            formatter(){
+                return `<strong>X-Value: ${this.x}</strong>
+                <strong>Y-Value: ${this.y}</strong>`
+            }
+        },
+
+        colors: ['red', 'green', 'blue'],
+
         credits: {
             // enabled: false,
             text: 'Aman Bhardwaj',
