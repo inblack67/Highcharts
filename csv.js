@@ -19,6 +19,30 @@ document.addEventListener('DOMContentLoaded', () => {
             title: {
                 text: 'Frameworks'
             },
+        },
+        responsive: {
+            rules: [
+                {
+                    condition: {
+                        maxWidth: 500,
+                        // minHeight/width max...
+                        callback(){
+                            return false;
+                            // check some condition if needed, if false is returned - mediaqueries wont be applied
+                        }
+                    },
+                    chartOptions: {
+                        legend: {
+                            enabled: false
+                        },
+                        yAxis: {
+                            title: {
+                                text: ''
+                            }
+                        },
+                    }
+                }
+            ]
         }
     }
 
