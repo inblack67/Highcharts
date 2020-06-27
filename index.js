@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     Highcharts.chart('container', {
         chart: {
             type: 'line',
-            // bar, area, scatter, line ,column, arealine
+            // bar, area, scatter, line ,column 
             zoomType: 'xy'
             // y, x, xy
         },
@@ -19,13 +19,14 @@ document.addEventListener('DOMContentLoaded', () => {
             style: {
                 color: 'white'
             },
-            formatter(){
-                return `<strong>X-Value: ${this.x}</strong>
-                <strong>Y-Value: ${this.y}</strong>`
-            }
+            shared: true,
+            // formatter(){
+            //     return `<strong>X-Value: ${this.x}</strong>
+            //     <strong>Y-Value: ${this.y}</strong>`
+            // }
         },
 
-        colors: ['red', 'green', 'blue'],
+        colors: ['green', 'yellow', 'blue'],
 
         credits: {
             // enabled: false,
@@ -41,23 +42,50 @@ document.addEventListener('DOMContentLoaded', () => {
             title: {
                 text: 'Skill Level'
             },
+            alternateGridColor: '#ccc'
         },
         xAxis: {
-            categories: ['JavaScript', 'Node.JS', 'React.JS', 'MERN Stack', 'HTML5-CSS3']
+            categories: ['React', 'Angular', 'Vue']
         },
-        series: [
-            {
-                name: 'John Doe',
-                data: [6,7,8]
-            },
-            {
-                name: 'Smith',
-                data: [5,9,10]
-            },
-            {
-                name: 'Rupert',
-                data: [10,5,8]
-            },
-        ]
+        series: [{
+            name: 'JavaScript Frameworks Survey',
+            negativeColor: 'red',
+            data: [10, 7, 8, -10, -7, 4, 6, 7, 8]
+        }]
+        // series: [
+        //     {
+        //         name: 'John',
+        //         data: [8,9,10]
+        //     },
+        //     {
+        //         name: 'Wick',
+        //         data: [7,10,6]
+        //     },
+        //     {
+        //         name: 'Doe',
+        //         data: [6,10,5]
+        //     },
+        // ]
+        // series: [{
+        //     name: 'JavaScript Survey',
+        //     data: [
+        //         {
+        //             name: 'John Doe',
+        //             y: 10,
+        //             x: 8
+        //         },
+        //         {
+        //             name: 'Smith',
+        //             y: 7,
+        //             x: 9
+        //         },
+        //         {
+        //             name: 'Rupert',
+        //             y: 6,
+        //             x: 8
+        //         },
+        //     ]
+        // }
+        // ]
     })
 })
